@@ -83,17 +83,17 @@
                         bindings = <
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-    &kp ESC   &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp 6                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &kp N6                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-    &kp I      &kp trans &kp trans &kp trans &kp trans &kp 7                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+     &kp I     &trans    &trans    &trans    &trans    &kp N7                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-    &kp M      &kp trans &kp trans &kp trans &kp trans &kp 8                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+     &kp M     &trans    &trans    &trans    &trans    &kp N8                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp 9                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &kp N9                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
                                 >;
                         };
                 function_layer {
@@ -103,15 +103,15 @@
 // | BT CLR ALL | F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |    F10  |    F11  |
     &bt BT_CLR_ALL &kp F1 &kp F2    &kp F3    &kp F4    &kp F5                    &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
 // | BT CLR  |         |    UP   |         |         |         |               |         |         |         |         |         |    F12  |
-    &bt BT_CLR  &kp trans &kp UP    &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp F12
+    &bt BT_CLR  &trans   &kp UP    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &kp F12
 // |   VOLUP |   LEFT  |   DOWN  |  RIGHT  |         |         |               |         |         |         |         |         |   USB   |
-    &kp K_VOL_UP &kp LEFT  &kp DOWN  &kp RIGHT &kp trans &kp trans               &kp trans  &kp trans &kp trans &kp trans &kp trans &out OUT_USB
+    &kp K_VOL_UP &kp LEFT  &kp DOWN  &kp RIGHT &trans  &trans                    &trans    &trans    &trans    &trans    &trans  &out OUT_USB
 // |  VOLDWN |         |         |         |         |CTLF11 12|               |  BLE 1  |  BLE 2  |  BLE 3  |         |         | BLUETOOTH |
-    &kp K_VOL_DN &kp trans &kp trans &kp trans &kp trans &sap_cp              &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp trans &kp trans &out OUT_BLE
+    &kp K_VOL_DN &trans  &trans    &trans    &trans    &sap_cp                &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &trans &out OUT_BLE
 // |   PAUSE |   WHOM  |SFT GUI S|   PSCR  |         |         |               |   LEFT  |   UP    |         |         |         |         |
-    &kp PAUSE_BREAK &kp K_WWW &kp LS(LG(S)) &kp PSCRN &kp trans &kp trans        &kp LEFT   &kp UP    &kp trans &kp trans &kp trans &kp trans
+    &kp PAUSE_BREAK &kp K_WWW &kp LS(LG(S)) &kp PSCRN &trans &trans             &kp LEFT   &kp UP    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |   DOWN  |         |   NUM   |   RIGHT |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp DOWN   &kp trans &kp KP_NUM &kp RIGHT &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &trans                   &kp DOWN   &trans  &kp KP_NUM &kp RIGHT  &trans    &trans
                                 >;
                         };
                 numblock_layer {
@@ -119,17 +119,17 @@
                         bindings = <
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |         |         |         |         |         |         |               |         |         |    *    |    /    |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp KP_ASTERISK &kp KP_DIVIDE &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans &kp KP_ASTERISK &kp KP_DIVIDE &trans &trans
 // |         |         |         |         |         |         |               |    7    |    8    |    9    |    -    |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp KP_PLUS &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &trans                   &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp KP_PLUS &trans  &trans
 // |         |         |         |         |         |         |               |    4    |    5    |    6    |    +    |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp KP_N4  &kp KP_N5 &kp KP_N6 &kp KP_MINUS &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &trans                   &kp KP_N4  &kp KP_N5 &kp KP_N6 &kp KP_MINUS &trans &trans
 // |         |         |         |         |         |         |               |    1    |    2    |    3    |         |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp KP_N1  &kp KP_N2 &kp KP_N3 &kp trans &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &trans                   &kp KP_N1  &kp KP_N2 &kp KP_N3 &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |    0    |    .    |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp KP_N0 &kp KP_DOT
+     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans   &kp KP_N0 &kp KP_DOT
                                 >;
                         };
         };
