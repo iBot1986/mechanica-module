@@ -83,7 +83,7 @@
                         bindings = <
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+    &kp ESC   &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp 6                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
