@@ -17,7 +17,7 @@
 // |   END   |    Z    |    X    |    C    |    V    |    B    |               |    N    |    M    |    ,    |    .    |    /    |    F9   |
     &kp END    &kp Z     &kp X     &kp C     &kp V     &kp B                     &kp N      &kp M     &kp COMMA &kp DOT   &kp SLASH &kp F9  
 // |   F5    |    `    |    '    |    \    |    TAB  |    FL   |               |    NL   |    GL   |    Ü    |    Ö    |    Ä    |    +    |
-    &kp F5     &kp GRAVE &kp SQT   &kp BSLH  &kp TAB   &kp trans                 &tog NUM  &kp trans &kp RA(Y) &kp RA(P) &kp RA(Q) &kp EQUAL
+    &kp F5     &kp GRAVE &kp SQT   &kp BSLH  &kp TAB   &kp trans                 &kp trans &kp trans &kp RA(Y) &kp RA(P) &kp RA(Q) &kp EQUAL
 // | ALT/ENT |   BSPC  |   SPC   |   LSHFT |    LCTL | WIN/TAB |               |   CAPS  |   RALT  |   RSFT  |    ENT  |   SPC   |    WIN  |
 &mt LALT ENTER &kp BSPC  &kp SPACE &kp LSHFT &kp RCTRL &mt LG(TAB)               &kp CAPS   &kp RALT  &kp RSFT  &kp ENTER  &kp SPACE &kp RGUI
                                 >;
