@@ -1,9 +1,70 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT 0
+#define FUNC    1
+#define NUM     2
+#define GAME    3
+
+#define NONE 0
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+        combo_lock {
+            timeout-ms = <50>;
+            key-positions = <34 35>;
+            bindings = <&kp K_COFFEE>;
+        };
+        combo_boot {
+            timeout-ms = <50>;
+            key-positions = <12 72>;
+            bindings = <&bootloader>;
+        };
+        glob_autotype_boot {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp LC(LA(A))>;
+        };
+        past_unformat_boot {
+            timeout-ms = <50>;
+            key-positions = <62 41>;
+            bindings = <&kp LS(LC(V))>;
+        };
+    };
+};
+
+/ {
+    macros {
+        sap_cp: sap_cp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LC(F11)>
+                , <&macro_pause_for_release>
+                , <&kp LC(F12)>
+                ;
+        };
+    };
+};
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
 
                 default_layer {
                         bindings = <
@@ -22,5 +83,56 @@
 &mt LALT ENTER &kp BSPC  &kp SPACE &kp LSHFT &kp RCTRL &mt LG(TAB)               &kp CAPS   &kp RALT  &kp RSFT  &kp ENTER  &kp SPACE &kp RGUI
                                 >;
                         };
-    };
+                game_layer {
+                        bindings = <
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp 6                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+    &kp I      &kp trans &kp trans &kp trans &kp trans &kp 7                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+    &kp M      &kp trans &kp trans &kp trans &kp trans &kp 8                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp 9                     &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+                                >;
+                        };
+                function_layer {
+                        bindings = <
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |    F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |    F10  |    F11  |
+    &kp trans  &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                    &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
+// | &bt BT_CLR |      |    UP   |         |         |         |               |         |         |         |         |         |    F12  |
+    &kp trans  &kp trans &kp UP    &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp F12
+// |   VOLUP |   LEFT  |   DOWN  |  RIGHT  |         |         |               |         |         |         |         |         |   USB   |
+    &kp K_VOL_UP &kp LEFT  &kp DOWN  &kp RIGHT &kp trans &kp trans               &kp trans  &kp trans &kp trans &kp trans &kp trans &out OUT_USB
+// |  VOLDWN |         |         |         |         |CTLF11 12|               |  BLE 1  |  BLE 2  |  BLE 3  |         |         | BLUETOOTH |
+    &kp K_VOL_DN &kp trans &kp trans &kp trans &kp trans &sap_cp              &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp trans &kp trans &out OUT_BLE
+// |   PAUSE |   WHOM  |SFT GUI S|   PSCR  |         |         |               |   LEFT  |   UP    |         |         |         |         |
+    &kp PAUSE_BREAK &kp K_WWW &kp LS(LG(S)) &kp PSCRN &kp trans &kp trans        &kp LEFT   &kp UP    &kp trans &kp trans &kp trans &kp trans
+// |         |         |         |         |         |         |               |   DOWN  |         |   NUM   |   RIGHT |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp DOWN   &kp trans &kp KP_NUM &kp RIGHT &kp trans &kp trans
+                                >;
+                        };
+                numblock_layer {
+                        bindings = <
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |         |         |         |         |         |               |         |         |    *    |    /    |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp KP_ASTERISK &kp KP_DIVIDE &kp trans &kp trans
+// |         |         |         |         |         |         |               |    7    |    8    |    9    |    -    |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp KP_PLUS &kp trans &kp trans
+// |         |         |         |         |         |         |               |    4    |    5    |    6    |    +    |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp KP_N4  &kp KP_N5 &kp KP_N6 &kp KP_MINUS &kp trans &kp trans
+// |         |         |         |         |         |         |               |    1    |    2    |    3    |         |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp KP_N1  &kp KP_N2 &kp KP_N3 &kp trans &kp trans &kp trans
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans
+// |         |         |         |         |         |         |               |         |         |         |         |    0    |    .    |
+    &kp trans  &kp trans &kp trans &kp trans &kp trans &kp trans                 &kp trans  &kp trans &kp trans &kp trans &kp KP_N0 &kp KP_DOT
+                                >;
+                        };
+        };
 };
