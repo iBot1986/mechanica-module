@@ -1,0 +1,6 @@
+if SHIELD_MECHANICA
+
+config ZMK_KEYBOARD_NAME
+    default "Mechanica"
+
+endif
