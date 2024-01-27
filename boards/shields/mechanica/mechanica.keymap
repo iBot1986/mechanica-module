@@ -15,7 +15,7 @@
         combo_lock {
             timeout-ms = <50>;
             key-positions = <33 34>;
-            bindings = <&kp K_COFFEE>;
+            bindings = <&kp LG(L)>;
         };
         combo_boot {
             timeout-ms = <50>;
