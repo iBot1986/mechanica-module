@@ -12,29 +12,24 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
         combo_lock {
             timeout-ms = <50>;
-            key-positions = <34 35>;
+            key-positions = <33 34>;
             bindings = <&kp K_COFFEE>;
         };
         combo_boot {
             timeout-ms = <50>;
-            key-positions = <12 72>;
+            key-positions = <11 47>;
             bindings = <&bootloader>;
         };
-        glob_autotype_boot {
+        glob_autotype {
             timeout-ms = <50>;
-            key-positions = <25 26>;
+            key-positions = <24 25>;
             bindings = <&kp LC(LA(A))>;
         };
-        past_unformat_boot {
+        past_unformat {
             timeout-ms = <50>;
-            key-positions = <62 41>;
+            key-positions = <40 73>;
             bindings = <&kp LS(LC(V))>;
         };
     };
