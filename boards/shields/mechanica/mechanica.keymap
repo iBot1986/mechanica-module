@@ -5,11 +5,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
-#define FUNC    1
-#define NUM     2
-#define GAME    3
-
-#define NONE 0
+#define GAME    1
+#define FUNC    2
+#define NUM     3
 
 / {
     combos {
@@ -85,18 +83,18 @@
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
      &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &trans    &trans    &trans    &trans    &trans    &kp N6                    &trans    &trans    &trans    &trans    &trans    &trans
+     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &kp I     &trans    &trans    &trans    &trans    &kp N7                    &trans    &trans    &trans    &trans    &trans    &trans
+     &kp I     &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &kp M     &trans    &trans    &trans    &trans    &kp N8                    &trans    &trans    &trans    &trans    &trans    &trans
+     &kp M     &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &trans    &trans    &trans    &trans    &trans    &kp N9                    &trans    &trans    &trans    &trans    &trans    &trans
+     &kp N6    &kp N7    &kp N8    &kp N9    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
      &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
                                 >;
                         };
-                function_layer {
+                func_layer {
                     display-name = "Function";
                         bindings = <
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -114,7 +112,7 @@
      &trans    &trans    &trans    &trans    &trans    &trans                   &kp DOWN   &trans  &kp KP_NUM &kp RIGHT  &trans    &trans
                                 >;
                         };
-                numblock_layer {
+                num_layer {
                     display-name = "Numblock";
                         bindings = <
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
