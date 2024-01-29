@@ -14,7 +14,7 @@
         compatible = "zmk,combos";
         lock {
             timeout-ms = <50>;
-            key-positions = <32 33>;
+            key-positions = <33 46>;
             bindings = <&kp LG(L)>;
         };
         combo_boot {
