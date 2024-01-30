@@ -9,29 +9,30 @@
 #define FUNC    2
 #define NUM     3
 
+#define COMBO(name, kp, pos) \
+combo_##name {               \
+    timeout-ms    = <30>;    \
+    bindings      = <kp>;    \
+    key-positions = <pos>;   \
+    layers        = <0 1>;   \
+};
+/* Key positions
+ 0  1  2  3  4  5 48       60  6  7  8  9 10 11
+12 13 14 15 16 17 49       59 18 19 20 21 22 23
+24 25 26 27 28 29 50       57 30 31 32 33 34 35
+36 37 38 39 40 41 51       56 42 43 44 45 46 47
+         61 62 63             70 71 72
+             65 66 52     55 67 68
+            64       53  54       69
+*/
+
+
 / {
     combos {
         compatible = "zmk,combos";
-        lock {
-            timeout-ms = <50>;
-            key-positions = <33 46>;
-            bindings = <&kp LG(L)>;
-        };
-        combo_boot {
-            timeout-ms = <50>;
-            key-positions = <11 47>;
-            bindings = <&bootloader>;
-        };
-        glob_autotype {
-            timeout-ms = <50>;
-            key-positions = <24 25>;
-            bindings = <&kp LC(LA(A))>;
-        };
-        past_unformat {
-            timeout-ms = <50>;
-            key-positions = <40 73>;
-            bindings = <&kp LS(LC(V))>;
-        };
+        COMBO(lock,   &kp LG(L),     33 46)
+        COMBO(boot,   &bootloader,   11 47)
+        COMBO(autotype,&kp LC(LA(A)),24 25)
     };
 };
 
