@@ -30,9 +30,13 @@ combo_##name {               \
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(lock,   &kp LG(L),     33 46)
+        COMBO(lock,   &kp LG(L),     33 45)
         COMBO(boot,   &bootloader,   11 47)
         COMBO(autotype,&kp LC(LA(A)),24 25)
+        COMBO(arr_up, &kp UARW,      19 20)
+        COMBO(arr_dn, &kp DARW,      31 32)
+        COMBO(arr_lt, &kp LARW,      30 31)
+        COMBO(arr_rt, &kp RARW,      32 33)
     };
 };
 
