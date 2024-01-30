@@ -46,6 +46,22 @@
                 , <&kp LC(F12)>
                 ;
         };
+        sqot: sqot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp SQT>
+                , <&kp SPACE>
+                ;
+        };
+        grve: grve {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp GRAVE>
+                , <&kp SPACE>
+                ;
+        };
     };
 };
 
@@ -66,7 +82,7 @@
 // |   END   |    Z    |    X    |    C    |    V    |    B    |               |    N    |    M    |    ,    |    .    |    /    |    F9   |
     &kp END    &kp Z     &kp X     &kp C     &kp V     &kp B                     &kp N      &kp M     &kp COMMA &kp DOT   &kp SLASH &kp F9  
 // |   F5    |    `    |    '    |    \    |    TAB  |    FL   |               |    NL   |    GL   |    Ü    |    Ö    |    Ä    |    +    |
-    &kp F5     &kp GRAVE &kp SQT   &kp BSLH  &kp TAB   &mo FUNC                  &tog NUM  &tog GAME &kp RA(Y) &kp RA(P) &kp RA(Q) &kp EQUAL
+    &kp F5 &mt GRAVE grve &mt SQT sqot &kp BSLH  &kp TAB   &mo FUNC              &tog NUM  &tog GAME &kp RA(Y) &kp RA(P) &kp RA(Q) &kp EQUAL
 // | ALT/ENT |   BSPC  |   SPC   |   LSHFT |    LCTL | WIN/TAB |               |   CAPS  |   RALT  |   RSHFT |    ENT  |   SPC   |    WIN  |
 &mt LALT ENTER &kp BSPC  &kp SPACE &kp LSHFT &kp RCTRL &kp LG(TAB)               &kp CAPS   &kp RALT  &kp RSHFT &kp ENTER  &kp SPACE &kp RGUI
                                 >;
