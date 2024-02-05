@@ -89,7 +89,7 @@ combo_##name {               \
 // |   F5    |    `    |    '    |    \    |    TAB  |    FL   |               |    NL   |    GL   |    Ü    |    Ö    |    Ä    |    +    |
     &kp F5      &grve     &sqot    &kp BSLH  &kp TAB   &mo FUNC                  &tog NUM  &tog GAME &kp RA(Y) &kp RA(P) &kp RA(Q) &kp EQUAL
 // | ALT/ENT |   BSPC  |   SPC   |   LSHFT |    LCTL | WIN/TAB |               |   CAPS  |   RALT  |   RSHFT |    ENT  |   SPC   |    WIN  |
-&mt LALT ENTER &kp BSPC  &kp SPACE &kp LSHFT &kp RCTRL &kp LG(TAB)               &kp CAPS  &kp RALT &caps_word &kp ENTER &kp SPACE &kp RGUI
+&mt LALT ENTER &kp BSPC  &kp SPACE &kp LSHFT &kp LCTRL &kp LG(TAB)               &kp CAPS  &kp RALT &caps_word &kp ENTER &kp SPACE &kp RGUI
                                 >;
                         };
                 game_layer {
