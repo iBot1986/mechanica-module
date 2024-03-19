@@ -34,10 +34,12 @@ combo_##name {               \
         COMBO(lock,   &kp LG(L),     33 45)
         COMBO(boot,   &bootloader,   11 47)
         COMBO(autotype,&kp LC(LA(A)),24 25)
-        COMBO(arr_up, &kp UARW,      19 20)
-        COMBO(arr_dn, &kp DARW,      31 32)
-        COMBO(arr_lt, &kp LARW,      30 31)
-        COMBO(arr_rt, &kp RARW,      32 33)
+        COMBO(arr_up, &kp UP,        19 20)
+        COMBO(arr_dn, &kp DOWN,      31 32)
+        COMBO(arr_lt, &kp LEFT,      30 31)
+        COMBO(arr_lt, &kp RIGHT,     32 33)
+        COMBO(grve, &kp GRAVE,       17 49)
+        COMBO(sqot, &kp SQT,         29 50)
     };
 };
 
@@ -52,19 +54,19 @@ combo_##name {               \
                 , <&kp LC(F12)>
                 ;
         };
-        sqot: sqot {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&kp SQT>
-                , <&kp SPACE>
-                ;
-        };
         grve: grve {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&kp GRAVE>
+                , <&kp SPACE>
+                ;
+        };
+        sqot: sqot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp SQT>
                 , <&kp SPACE>
                 ;
         };
@@ -100,9 +102,9 @@ combo_##name {               \
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
      &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
+     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &kp UP    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &kp I     &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
+     &kp I     &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &kp LEFT  &kp DOWN  &kp RIGHT
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
      &kp M     &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
