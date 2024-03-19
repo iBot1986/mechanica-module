@@ -6,8 +6,9 @@
 
 #define DEFAULT 0
 #define GAME    1
-#define FUNC    2
-#define NUM     3
+#define NUM     2
+#define FUNC    3
+
 
 #define COMBO(name, kp, pos) \
 combo_##name {               \
@@ -79,7 +80,7 @@ combo_##name {               \
                         bindings = <
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |   ESC   |    1    |    2    |    3    |    4    |    5    |               |    6    |    7    |    8    |    9    |    0    |    -    |
- &kp ESC     &kp N1 &mt KP_ASTERISK N2 &kp N3 &kp N4   &kp N5                    &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
+    &kp ESC    &kp N1    &kp N2   &kp N3    &kp N4    &kp N5                    &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
 // |   DEL   |    Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    |    P    |    [    |
     &kp DEL    &kp Q     &kp W     &kp E     &kp R     &kp T                     &kp Y      &kp U     &kp I     &kp O     &kp P     &kp LBKT
 // |   HOME  |    A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |    L    |    ;    |    ]    |
@@ -110,24 +111,6 @@ combo_##name {               \
      &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
                                 >;
                         };
-                func_layer {
-                    display-name = "Function";
-                        bindings = <
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// | BT CLR ALL | F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |    F10  |    F11  |
-    &bt BT_CLR_ALL &kp F1 &kp F2    &kp F3    &kp F4    &kp F5                    &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
-// | BT CLR  |         |    UP   |         |         |         |               |         |         |         |         |         |    F12  |
-    &bt BT_CLR  &trans   &kp UP    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &kp F12
-// |   VOLUP |   LEFT  |   DOWN  |  RIGHT  |         |         |               |         |         |         |         |         |   USB   |
-    &kp K_VOL_UP &kp LEFT  &kp DOWN  &kp RIGHT &trans  &trans                    &trans    &trans    &trans    &trans    &trans  &out OUT_USB
-// |  VOLDWN |         |         |         |         |CTLF11 12|               |  BLE 1  |  BLE 2  |  BLE 3  |         |         | BLUETOOTH |
-    &kp K_VOL_DN &trans  &trans    &trans    &trans    &sap_cp                &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &trans &out OUT_BLE
-// |   PAUSE |   WHOM  |SFT GUI S|   PSCR  |         |         |               |   LEFT  |   UP    |         |         |         |         |
-    &kp PAUSE_BREAK &kp K_WWW &kp LS(LG(S)) &kp PSCRN &trans &trans             &kp LEFT   &kp UP    &trans    &trans    &trans    &trans
-// |         |         |         |         |         |         |               |   DOWN  |         |   NUM   |   RIGHT |  BLE 0  |         |
-     &trans    &trans    &trans    &trans    &trans    &trans                   &kp DOWN   &trans  &kp KP_NUM &kp RIGHT &bt BT_SEL 0 &trans
-                                >;
-                        };
                 num_layer {
                     display-name = "Numblock";
                         bindings = <
@@ -146,5 +129,24 @@ combo_##name {               \
      &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans   &kp KP_N0 &kp KP_DOT
                                 >;
                         };
+                func_layer {
+                    display-name = "Function";
+                        bindings = <
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// | BT CLR ALL | F1   |    F2   |    F3   |    F4   |    F5   |               |    F6   |    F7   |    F8   |    F9   |    F10  |    F11  |
+    &bt BT_CLR_ALL &kp F1 &kp F2    &kp F3    &kp F4    &kp F5                    &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
+// | BT CLR  |         |    UP   |         |         |         |               |         |         |         |         |         |    F12  |
+    &bt BT_CLR  &trans   &kp UP    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &kp F12
+// |   VOLUP |   LEFT  |   DOWN  |  RIGHT  |         |         |               |         |         |         |         |         |   USB   |
+    &kp K_VOL_UP &kp LEFT  &kp DOWN  &kp RIGHT &trans  &trans                    &trans    &trans    &trans    &trans    &trans  &out OUT_USB
+// |  VOLDWN |         |         |         |         |CTLF11 12|               |  BLE 1  |  BLE 2  |  BLE 3  |         |         | BLUETOOTH |
+    &kp K_VOL_DN &trans  &trans    &trans    &trans    &sap_cp                &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &trans &out OUT_BLE
+// |   PAUSE |   WHOM  |SFT GUI S|   PSCR  |         |         |               |   LEFT  |   UP    |         |         |         |         |
+    &kp PAUSE_BREAK &kp K_WWW &kp LS(LG(S)) &kp PSCRN &trans &trans             &kp LEFT   &kp UP    &trans    &trans    &trans    &trans
+// |         |         |         |         |         |         |               |   DOWN  |         |   NUM   |   RIGHT |  BLE 0  |         |
+     &trans    &trans    &trans    &trans    &trans    &trans                   &kp DOWN   &trans  &kp KP_NUM &kp RIGHT &bt BT_SEL 0 &trans
+                                >;
+                        };
         };
+
 };
