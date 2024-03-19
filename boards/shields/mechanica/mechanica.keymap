@@ -37,7 +37,7 @@ combo_##name {               \
         COMBO(arr_up, &kp UP,        19 20)
         COMBO(arr_dn, &kp DOWN,      31 32)
         COMBO(arr_lt, &kp LEFT,      30 31)
-        COMBO(arr_lt, &kp RIGHT,     32 33)
+        COMBO(arr_rt, &kp RIGHT,     32 33)
         COMBO(grve, &kp GRAVE,       17 49)
         COMBO(sqot, &kp SQT,         29 50)
     };
