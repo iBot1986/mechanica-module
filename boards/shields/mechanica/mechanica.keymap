@@ -40,6 +40,7 @@ combo_##name {               \
         COMBO(arr_rt, &kp RIGHT,     32 33)
         COMBO(grve, &kp GRAVE,       17 49)
         COMBO(sqot, &kp SQT,         29 50)
+        COMBO(game, &tog GAME,        11 23)
     };
 };
 
@@ -89,8 +90,8 @@ combo_##name {               \
     &kp HOME   &kp A     &kp S     &kp D     &kp F     &kp G                     &kp H      &kp J     &kp K     &kp L     &kp SEMI  &kp RBKT
 // |   END   |    Z    |    X    |    C    |    V    |    B    |               |    N    |    M    |    ,    |    .    |    /    |    F9   |
     &kp END    &kp Z     &kp X     &kp C     &kp V     &kp B                     &kp N      &kp M     &kp COMMA &kp DOT   &kp SLASH &kp F9  
-// |   F5    |    `    |    '    |    \    |    TAB  |    FL   |               |    NL   |    GL   |    Ü    |    Ö    |    Ä    |    +    |
-    &kp F5      &grve     &sqot    &kp BSLH  &kp TAB   &mo FUNC                  &tog NUM  &tog GAME &kp RA(Y) &kp RA(P) &kp RA(Q) &kp EQUAL
+// |   F5    |    `    |    '    |    \    |    TAB  |    FL   |               |    NL   | ALT/TAB |    Ü    |    Ö    |    Ä    |    +    |
+    &kp F5      &grve     &sqot    &kp BSLH  &kp TAB   &mo FUNC                  &tog NUM &kp LA(TAB) &kp RA(Y) &kp RA(P) &kp RA(Q) &kp EQUAL
 // | ALT/ENT |   BSPC  |   SPC   |   LSHFT |    LCTL | WIN/TAB |               |   CAPS  |   RALT  |   RSHFT |    ENT  |   SPC   |    WIN  |
 &mt LALT ENTER &kp BSPC  &kp SPACE &kp LSHFT &kp LCTRL &kp LG(TAB)               &kp CAPS  &kp RALT &caps_word &kp ENTER &kp SPACE &kp RGUI
                                 >;
