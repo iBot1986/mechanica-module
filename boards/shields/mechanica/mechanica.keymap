@@ -41,8 +41,6 @@ combo_##name {               \
         COMBO(grve, &kp GRAVE,       17 49)
         COMBO(sqot, &kp SQT,         29 50)
         COMBO(game, &tog GAME,       11 23)
-        COMBO(deskr, &kp LG(END),    55 70)
-        COMBO(deskl, &kp LG(HOME),   54 55)
     };
 };
 
