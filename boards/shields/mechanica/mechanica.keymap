@@ -8,7 +8,7 @@
 #define GAME    1
 #define NUM     2
 #define FUNC    3
-
+#define LOCK    4
 
 #define COMBO(name, kp, pos) \
 combo_##name {               \
@@ -31,18 +31,18 @@ combo_##name {               \
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(lock,   &kp LG(L),     33 45)
         COMBO(boot,   &bootloader,   11 47)
         COMBO(autotype,&kp LC(LA(A)),24 25)
-        COMBO(arr_up, &kp UP,        19 20)
-        COMBO(arr_dn, &kp DOWN,      31 32)
-        COMBO(arr_lt, &kp LEFT,      30 31)
-        COMBO(arr_rt, &kp RIGHT,     32 33)
+#        COMBO(arr_up, &kp UP,        19 20)
+#        COMBO(arr_dn, &kp DOWN,      31 32)
+#        COMBO(arr_lt, &kp LEFT,      30 31)
+#        COMBO(arr_rt, &kp RIGHT,     32 33)
         COMBO(grve, &kp GRAVE,       17 49)
         COMBO(sqot, &kp SQT,         29 50)
         COMBO(game, &tog GAME,       11 23)
         COMBO(deskr, &kp LG(END),    55 70)
         COMBO(deskl, &kp LG(HOME),   54 55)
+        COMBO(lock,  &tog LOCK,      33 45)
     };
 };
 
@@ -104,14 +104,14 @@ combo_##name {               \
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
      &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
-// |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &kp UP    &trans
-// |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &kp I     &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &kp LEFT  &kp DOWN  &kp RIGHT
+// |         |         |         |         |         |         |               |         |   UP    |         |         |         |         |
+     &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &kp UP    &trans    &trans    &kp UP    &trans
+// |         |         |         |         |         |         |               |   LEFT  |  DOWN    |  RIGHT |         |         |         |
+     &kp I     &trans    &trans    &trans    &trans    &trans                    &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
      &kp M     &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
-// |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &kp N6    &kp N7    &kp N8    &kp N9    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
+// |         |         |         |         |         |         |               |         |  SPACE  |         |         |         |         |
+     &kp N6    &kp N7    &kp N8    &kp N9    &trans    &trans                    &trans    &kp SPACE  &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |         |         |         |         |         |         |
      &trans    &trans    &trans    &trans    &trans    &trans                    &trans    &trans    &trans    &trans    &trans    &trans
                                 >;
@@ -150,6 +150,24 @@ combo_##name {               \
     &kp PAUSE_BREAK &kp K_WWW &kp LS(LG(S)) &kp PSCRN &trans &trans             &kp LEFT   &kp UP    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |   DOWN  |         |   NUM   |   RIGHT |  BLE 0  |         |
      &trans    &trans    &trans    &trans    &trans    &trans                   &kp DOWN   &trans  &kp KP_NUM &kp RIGHT &bt BT_SEL 0 &trans
+                                >;
+                        };
+                lock_layer {
+                    display-name = "Keyboard lock";
+                        bindings = <
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+// |         |         |         |         |         |         |               |         |         |         |    -    |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
                                 >;
                         };
         };
