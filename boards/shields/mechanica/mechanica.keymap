@@ -94,6 +94,24 @@ combo_##name {               \
 &mt LALT ENTER &kp BSPC  &kp SPACE &kp LSHFT &kp LCTRL &kp LG(TAB)               &kp CAPS  &kp RALT &caps_word &kp ENTER &kp SPACE &kp RGUI
                                 >;
                         };
+                lock_layer {
+                    display-name = "Keyboard lock";
+                        bindings = <
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+// |         |         |         |         |         |         |               |         |         |         |    -    |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &trans    &none     &none
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &trans    &none     &none
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+// |         |         |         |         |         |         |               |         |         |         |         |         |         |
+     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
+                                >;
+                        };
                 game_layer {
                     display-name = "Game";
                         bindings = <
@@ -146,24 +164,6 @@ combo_##name {               \
     &kp PAUSE_BREAK &kp K_WWW &kp LS(LG(S)) &kp PSCRN &trans &trans             &kp LEFT   &kp UP    &trans    &trans    &trans    &trans
 // |         |         |         |         |         |         |               |   DOWN  |         |   NUM   |   RIGHT |  BLE 0  |         |
      &trans    &trans    &trans    &trans    &trans    &trans                   &kp DOWN   &trans  &kp KP_NUM &kp RIGHT &bt BT_SEL 0 &trans
-                                >;
-                        };
-                lock_layer {
-                    display-name = "Keyboard lock";
-                        bindings = <
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
-// |         |         |         |         |         |         |               |         |         |         |    -    |         |         |
-     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
-// |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &trans    &none     &none
-// |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &trans    &none     &none
-// |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
-// |         |         |         |         |         |         |               |         |         |         |         |         |         |
-     &none     &none     &none     &none     &none     &none                     &none     &none     &none     &none     &none     &none
                                 >;
                         };
         };
