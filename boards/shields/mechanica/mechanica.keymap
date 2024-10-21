@@ -38,7 +38,6 @@ combo_##name {               \
         COMBO(game, &tog GAME,       11 23)
         COMBO(deskr, &kp LG(END),    55 70)
         COMBO(deskl, &kp LG(HOME),   54 55)
-        COMBO(lock,  &tog LOCK,      33 45)
     };
 };
 
