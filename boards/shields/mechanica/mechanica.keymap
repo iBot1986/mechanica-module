@@ -5,10 +5,11 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
-#define GAME    1
-#define NUM     2
-#define FUNC    3
-#define LOCK    4
+#define LOCK    1
+#define GAME    2
+#define NUM     3
+#define FUNC    4
+
 
 #define COMBO(name, kp, pos) \
 combo_##name {               \
