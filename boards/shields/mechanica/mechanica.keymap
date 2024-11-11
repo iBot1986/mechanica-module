@@ -18,16 +18,16 @@ combo_##name {               \
     layers        = <0 1>;   \
 };
 /* Key positions
- 0  1  2  3  4  5 48       60  6  7  8  9 10 11
-12 13 14 15 16 17 49       59 18 19 20 21 22 23
+ 0  1  2  3  4  5 48       59  6  7  8  9 10 11
+12 13 14 15 16 17 49       58 18 19 20 21 22 23
 24 25 26 27 28 29 50       57 30 31 32 33 34 35
 36 37 38 39 40 41 51       56 42 43 44 45 46 47
-         61 62 63             70 71 72
-             65 66 52     55 67 68
-            64       53  54       69
+         60 61 62             69 70 71
+             64 65 52     55 66 67
+            63       53  54       68
 */
 &soft_off {
-    hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
+    hold-time-ms = <2000>; // Only turn off it the key is held for 5 seconds or longer.
 };
 
 / {
@@ -38,8 +38,8 @@ combo_##name {               \
         COMBO(grve, &kp GRAVE,       17 49)
         COMBO(sqot, &kp SQT,         29 50)
         COMBO(game, &tog GAME,       11 23)
-        COMBO(deskr, &kp LG(END),    55 70)
-        COMBO(deskl, &kp LG(HOME),   54 55)
+        COMBO(deskr, &kp LG(LC(RIGHT)), 55 70)
+        COMBO(deskl, &kp LG(LC(LEFT)), 54 55)
     };
 };
 
@@ -80,17 +80,22 @@ combo_##name {               \
                 default_layer {
                     display-name = "Default";
                         bindings = <
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// -----0---------1---------2---------3---------4---------5-------------------------6---------7---------8---------9--------10--------11-----
 // |   ESC   |    1    |    2    |    3    |    4    |    5    |               |    6    |    7    |    8    |    9    |    0    |    -    |
     &kp ESC    &kp N1    &kp N2   &kp N3    &kp N4    &kp N5                    &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
+// ----12--------13--------14--------15--------16--------17------------------------18--------19--------20--------21--------22--------23-----
 // |   DEL   |    Q    |    W    |    E    |    R    |    T    |               |    Y    |    U    |    I    |    O    |    P    |    [    |
     &kp DEL    &kp Q     &kp W     &kp E     &kp R     &kp T                     &kp Y      &kp U     &kp I     &kp O     &kp P     &kp LBKT
+// ----24--------25--------26--------27--------28--------29------------------------30--------31--------32--------33--------34--------35-----
 // |   HOME  |    A    |    S    |    D    |    F    |    G    |               |    H    |    J    |    K    |    L    |    ;    |    ]    |
     &kp HOME   &kp A     &kp S     &kp D     &kp F     &kp G                     &kp H      &kp J     &kp K     &kp L     &kp SEMI  &kp RBKT
+// ----36--------37--------38--------39--------40--------41------------------------42--------43--------44--------45--------46--------47-----
 // |   END   |    Z    |    X    |    C    |    V    |    B    |               |    N    |    M    |    ,    |    .    |    /    |    F9   |
     &kp END    &kp Z     &kp X     &kp C     &kp V     &kp B                     &kp N      &kp M     &kp COMMA &kp DOT   &kp SLASH &kp F9  
+// ----48--------49--------50--------51--------52--------53------------------------54--------55--------56--------57--------58--------59-----
 // |   F5    |    `    |    '    |    \    |    TAB  |    FL   |               |    NL   | ALT/TAB |    Ü    |    Ö    |    Ä    |    +    |
     &kp F5      &grve     &sqot    &kp BSLH  &kp TAB   &mo FUNC                  &tog NUM &kp LA(TAB) &kp RA(Y) &kp RA(P) &kp RA(Q) &kp EQUAL
+// ----60--------61--------62--------63--------64--------65------------------------66--------67--------68--------69--------70--------71-----
 // | ALT/ENT |   BSPC  |   SPC   |   LSHFT |    LCTL | WIN/TAB |               |   CAPS  |   RALT  |   RSHFT |    ENT  |   SPC   |    WIN  |
 &mt LALT ENTER &kp BSPC  &kp SPACE &kp LSHFT &kp LCTRL &kp LG(TAB)               &kp CAPS  &kp RALT &caps_word &kp ENTER &kp SPACE &kp RGUI
                                 >;
